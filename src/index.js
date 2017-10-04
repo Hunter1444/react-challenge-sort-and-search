@@ -30,12 +30,7 @@ const initialState = [];
 
 
 function humanlist(state = initialState, action){
-    if(action.type === 'ADD_HUMAN'){
-      return[
-        ...state,
-        action.payload
-      ]
-    } else if(action.type === 'ORDER_SORT'){
+    if(action.type === 'ORDER_SORT'){
       return[
         ...state
       ]
@@ -51,7 +46,7 @@ function humanlist(state = initialState, action){
     return state;
   }
 
-const store = createStore(humanlist);
+const store = createStore(humanlist, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>
